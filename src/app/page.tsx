@@ -81,7 +81,7 @@ export default function Home() {
 
       {/* Right */}
       <div className="relative bg-[#f48916]" style={{ flex: '1 1' }}>
-        <Button className="absolute right-12 top-8 bg-white text-black">
+        <Button className="absolute right-12 top-8 bg-white !text-black">
           <a href="/">Join Now</a>
         </Button>
 
