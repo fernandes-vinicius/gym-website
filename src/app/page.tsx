@@ -1,113 +1,137 @@
 import Image from 'next/image'
 
+import heroImg from '~/assets/images/hero.png'
+import heroBgImg from '~/assets/images/hero-bg.png'
+import hearthIcon from '~/assets/icons/hearth.png'
+import caloriesBarsIcon from '~/assets/icons/calories-bars.png'
+
+import { Blur } from '~/components/Blur'
+import { Logo } from '~/components/Logo'
+import { Navbar } from '~/components/Navbar'
+import { Statistics } from '~/components/Statistics'
+import { Button } from '~/components/Button'
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <section id="home" className="flex justify-between">
+      <Blur className="left-0" />
+
+      {/* Left */}
+      <div
+        className="flex flex-col gap-8 px-8 pb-8 pt-6"
+        style={{ flex: '3 1' }}
+      >
+        <header id="header" className="flex justify-between">
+          <Logo />
+          <Navbar />
+        </header>
+
+        <div
+          className="relative mt-16 flex w-fit items-center justify-start
+          rounded-[4rem] bg-[#393d42] px-[13px] py-5 text-white"
+        >
+          <div
+            className="absolute left-2 z-[1] h-4/5 w-[5.4rem] rounded-[3rem]
+            bg-[#f48916]"
+          />
+          <span className="z-[2]">THE BEST FITNESS CLUB IN THE TOWN</span>
+        </div>
+
+        {/* Hero Text */}
+        <div
+          className="flex flex-col gap-6 text-7xl font-bold uppercase
+          text-white"
+        >
+          <div>
+            <span className="stroke-text">Shape</span> <span>Your</span>
+          </div>
+
+          <div>
+            <span>Ideal body</span>
+          </div>
+
+          <div
+            className="w-4/5 text-base font-extralight normal-case
+            tracking-[1px]"
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            <span>
+              In here we will help you to shape and build your ideal body and
+              live up your life to fullest
+            </span>
+          </div>
+        </div>
+
+        {/* Figures */}
+        <div className="flex gap-8">
+          <Statistics label="expert coaches" value={140} />
+
+          <Statistics label="Members joined" value={978} />
+
+          <Statistics label="fitness programs" value={50} />
+        </div>
+
+        {/* Hero Buttons */}
+        <div className="flex gap-4 !font-normal">
+          <Button>Get Started</Button>
+          <Button className="!border-2 !border-orange bg-transparent">
+            Learn More
+          </Button>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
+      {/* Right */}
+      <div className="relative bg-[#f48916]" style={{ flex: '1 1' }}>
+        <Button className="absolute right-12 top-8 bg-white text-black">
+          <a href="/">Join Now</a>
+        </Button>
+
+        {/* Heart Rate */}
+        <div
+          className="absolute right-16 top-28 flex w-fit flex-col items-start
+          gap-4 rounded-[5px] bg-darkGrey p-4"
+        >
+          <Image
+            alt=""
+            src={hearthIcon}
+            width={32}
+            height={32}
+            className="w-8"
+            priority
+          />
+          <span className="text-gray">Heart Rate</span>
+          <span className="text-2xl text-white">116 bpm</span>
+        </div>
+
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          alt=""
+          src={heroImg}
+          className="absolute right-32 top-40 w-[23rem]"
         />
+
+        <Image
+          alt=""
+          src={heroBgImg}
+          className="absolute right-80 top-16 -z-[1] w-60"
+        />
+
+        {/* Calories */}
+        <div
+          className="absolute right-[28rem] top-[32rem] flex w-max gap-8
+          rounded-[5px] bg-caloryCard p-4"
+        >
+          <Image
+            alt=""
+            src={caloriesBarsIcon}
+            width={48}
+            height={48}
+            className="w-12"
+          />
+          <div className="flex flex-col justify-between">
+            <span className="text-gray">Calories burned</span>
+            <span className="text-2xl text-white">220 kcal</span>
+          </div>
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </section>
   )
 }
