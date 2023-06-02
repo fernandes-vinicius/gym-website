@@ -1,29 +1,15 @@
 import Image from 'next/image'
 
+import nbIcon from '~/assets/icons/nb.png'
+import adidasIcon from '~/assets/icons/adidas.png'
+import nikeIcon from '~/assets/icons/nike.png'
+
 export function Partners() {
   return (
     <div className="flex gap-4 text-5xl font-bold text-white">
-      <Image
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAlCAYAAAAJBxroAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASHSURBVHgBxVnZUSMxEG2MofhjNgK0EeAMGCIAIlhcHFV8sUQARID5ooqjsCNYiGCdASYCRAb+pDj3PSNR8qxmRiMfvCqXDkuyWt163S3PSCTOzs7U3Nzcg2lq5yu3LjMzM7pWqx00m82+b53z8/PG7OxsI9v//v6eoEgkAFhfY7ze2dnp2r66RGJ+fj79+PiwTeV85daFY97e3o5Q7eds6hBj1rP9OBAJBX+D4y8vLzWaB9vb2zc1iQQW+1Vh7M+Cr1MZHxQ+10ASrTGaGIq2bWPzKmdorjldXFykEmhuFZC8vLysRwu2tbXVlNGRyqeJjlU43NmVcEOeIGg6r6+vJJAGLEGhXJZPYRsSAVpTtMZCwA0/PT0NtLG3t6d9Y8iuMJ0EJJJgQ32wW58sV2DapcDcpJLGSM1kMRk2HZUZpnxzYR4/XMq/uro6wQZ+S9hGjyF0j+yJMoi0KmkMQu2jWJcIgPIXxVA+tYRNbobOhZm2jcZvQDhtCPe3ZEq/Kt2nEgmY2A9bpw+UQMLAAdy6ZmycsC6Z1gsWDM6PmlISCZzylyDY7GHoPIy98XT3S6bdBwuGHyBD6YBF8+YrlsZ3qcBpend3t+120IylhC1BRq3gOwYTOEJx5PkRqdfryvbhHg7qMD23b8k4dGpuXwKBsd1sH+LTk5I5g/s4Et07tq9D5yCO2zBao89akc/TV76xOJxHW+ccjKcJpwXL6+fn52NWpuagXZ8G6k/snaOGqV206ZSjGNdAwwRX7WGXCsYNgapTuxE3naCJ2XGOQ3XTjeDUY0QwbdnAfezZjlJThFC06U2borjphJO2fCd60NRGNrIpZEVqS8abVowbpzDrVV+4VigY1DuS75oC7vIy80LBqjjSb0LLupwscu+YSSUGOReJw0ceRA6BWKiceh54+j0JT1kS+LVrlKvZL6aejzm5V8pDwWGkYoRmFG8CAftY9EfCBFTwj49ux8TyMQoAtlLmBWrZaLMBllWWWbOsyije1kkIWGMV4/kSVugysM4GipbbFyWYa9fW2ZpQakgA9AW7BBsKuX0kBkQct2U5mMm6h+AVDJE8TYCDixJKC43PLQQIjgF9wN3t+Pqx6SWJwH+CIbPd9L3zFWyI2a2uEtx6MPTYaWEsIy2bjP3qbF/NM6gSxcPkumZTUekMwcPx9ZdF8g562Y4hjRltKQlEJrulKUVpjYfjtk18ShoPsRyvtocE4/s3LnzT1JWUwM1uWY81R2jmDve6y1cqHiyD7tC5edoeqx+zqYllSvuxTt20F002HvVmmIGG//I+n0e/3ftAel5YWBjcNQphzHoZVrCM9hrqa+Z1ahxC5WqLGKuDhjk9WP9F0BFPKrVhlJJ9D3ExEIwmZCL5L3hiwkXbJmnwrxrPelqmkw2c2tArDwPBbDLpfpH9f8o9edQ7Oevdy4TzNzeeLELdOMFNCYeXXgnzDC0TAt/1D4rMz0UdVFvJIRddWLwQdbGejBn8g6KDJ74WzD84CKgbs+qEDEb0rS3r+UBnjaB1kBth3T5MPGgjXDMvE47FP7iwTunsQbuRAAAAAElFTkSuQmCC"
-        alt=""
-        width={40}
-        height={40}
-        className="w-10"
-      />
-      <Image
-        src="data:image/png;base64,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"
-        alt=""
-        width={40}
-        height={40}
-        className="w-10"
-      />
-      <Image
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAqCAYAAAAERIP3AAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMFSURBVHgB5ZlfcppQFMYPir423QFdQZMd4ApaV5Awo874ZLuC2h0kTz6oY7IDu4JkB7UrkCX4rKL9joUMwQPy5/Kv+c0g4gXk45zv3stBo3fGYrG4OhwOo+Px+LVB74jZbDZyHGcN8Z+azWYncufJZGLQf8B8Pr+D8DWW43Q6HXu/61EHtVqta6xsqiksGun9A4uBzQ2Wbr/fX3rtoeI56u5BtSMgmrF3u11nOBza/v1CxSPqfPAT1QhBNLOEv61er7cJ7h+V9iZSxKIaECKasP0TGsZhx+kRJ9tQxQkTTf/8bfn9LSGKx8lu3RNUkgjRjOhviTPx7vBmYnmginFBNPMCf3clf0ucieeOjtdVSvsYoi/6W0JKe9Ndly4+jmiwwYzt+2AweKSEvBGP2Y+JlcHfy4x8TNFMbH9LvBGvadotlUgC0Uwif0sE0970vuBGXFFBJBSdyt8Sr+L9Kc9AvEE5k1Q0ZfC3xKv4YMpj+wPlRArRTCZ/S/jT3gy0maSYlKKZzP6W0PiDJzYY39fBRvzhR8uyMv+hJ5p8tkrAA0R/oxw4Rb7dbpu4uLPG/X5/h9U9pYT7EdiHI21ScpT6W+IkHhf3RWrEhY8ohXhPNKW3jg3hXQhfUY54NbzrkHYDQmKnHItGqegZwp8pvXD2903ewhktzO9+kBkdjKsvYe0KIu2Rm78ldLdOFwlHEp3WeLvdPvmHGoWic/e3hMbVTFdAXLx0NLComAUW4m8JHcI/UzIuZkoCchm/48K9fWFz+ACF+luCe3uDioX9bZUtnCk68qX5W6JI8aX6W0KnYijd3xJ5v6WtjL8lOPI25dPpKX/+Vg1H3ib1nObnVRbOcOT/kMLChar6WhE0cLFLUoP3/ntMNaGh6zqPuVmHH/b3DTo2VTeyEBpcpkL0U7+X43f4dfC3xGmcR/TvHcfh6q2R4NiN6+/UZa6y0bwvblHjN8Wb8a2Q5t06RtuP5t9wbwCXoIyQ/WsfbT9a8Ae+AbDB2H3O52d37gxXEP0Lvz+qKGVXhb8QueU5ha5tsAAAAABJRU5ErkJggg=="
-        alt=""
-        width={40}
-        height={40}
-        className="w-10"
-      />
+      <Image src={nbIcon} alt="" width={40} height={40} className="w-10" />
+      <Image src={adidasIcon} alt="" width={40} height={40} className="w-10" />
+      <Image src={nikeIcon} alt="" width={40} height={40} className="w-10" />
     </div>
   )
 }

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import heroImg from '~/assets/images/hero.png'
 import heroBgImg from '~/assets/images/hero-bg.png'
-import hearthIcon from '~/assets/icons/hearth.png'
+import hearthRateIcon from '~/assets/icons/hearth-rate.png'
 import caloriesBarsIcon from '~/assets/icons/calories-bars.png'
 
 import { Blur } from '~/components/Blur'
@@ -97,7 +97,7 @@ export default function Home() {
         >
           <Image
             alt=""
-            src={hearthIcon}
+            src={hearthRateIcon}
             width={32}
             height={32}
             className="w-8"

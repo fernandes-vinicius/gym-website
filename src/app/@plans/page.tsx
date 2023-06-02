@@ -1,3 +1,5 @@
+import { CrownIcon, DumbbellIcon, HeartPulseIcon } from 'lucide-react'
+
 import { Blur } from '~/components/Blur'
 
 import { Plan } from './components/Plan'
@@ -15,7 +17,7 @@ export default function Plans() {
       >
         <span className="stroke-text">Ready to Start</span>
         <span>Your Journey</span>
-        <span className="stroke-text">now withus</span>
+        <span className="stroke-text">now with us</span>
       </header>
 
       {/* Plans */}
@@ -24,6 +26,7 @@ export default function Plans() {
         md:flex-row"
       >
         <Plan
+          icon={<HeartPulseIcon size={32} className="text-orange" />}
           title="Basic Plan"
           price={25}
           features={[
@@ -34,6 +37,7 @@ export default function Plans() {
         />
 
         <Plan
+          icon={<CrownIcon size={32} />}
           title="Premium Plan"
           price={30}
           features={[
@@ -45,6 +49,7 @@ export default function Plans() {
         />
 
         <Plan
+          icon={<DumbbellIcon size={32} className="rotate-90 text-orange" />}
           title="Pro Plan"
           price={45}
           features={[

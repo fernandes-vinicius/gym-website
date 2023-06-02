@@ -49,11 +49,8 @@ export default function Reasons() {
 
         <div className="flex flex-col gap-4 text-5xl font-bold text-white">
           <Reason>over 140+ expert coach&apos;s</Reason>
-
           <Reason>train smarter and faster than before</Reason>
-
           <Reason>1 free program for new member</Reason>
-
           <Reason>reliable partners</Reason>
         </div>
 
