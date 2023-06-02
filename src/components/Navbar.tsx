@@ -1,6 +1,6 @@
 export function Navbar() {
   return (
-    <nav>
+    <nav className="hidden md:block">
       <ul className="flex gap-8 text-white">
         <li className="list-item">
           <a href="/">Home</a>

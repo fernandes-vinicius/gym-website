@@ -45,11 +45,11 @@ export function Footer() {
 
       <Blur
         className="bottom-0 right-[15%] !h-48 !w-[26rem]
-      bg-red-600 !blur-full-2"
+      bg-red-600"
       />
       <Blur
         className="absolute bottom-0 left-[15%] !h-48 !w-[26rem]
-      bg-[#ff7300] !blur-full-2"
+      bg-[#ff7300]"
       />
     </footer>
   )

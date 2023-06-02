@@ -30,18 +30,17 @@ export default function RootLayout(props: RootLayoutProps) {
 
   return (
     <html lang="en" className={inter.className}>
-      <body
-        className="flex flex-col gap-24 overflow-x-hidden bg-appColor
-        bg-main-deep"
-      >
-        {children}
-        {programs}
-        {reasons}
-        {plans}
-        {testimonials}
-        {joinUs}
+      <body className="overflow-x-hidden bg-appColor bg-main-deep">
+        <main className="flex flex-col gap-24">
+          {children}
+          {programs}
+          {reasons}
+          {plans}
+          {testimonials}
+          {joinUs}
 
-        <Footer />
+          <Footer />
+        </main>
       </body>
     </html>
   )

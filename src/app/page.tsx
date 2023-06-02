@@ -13,8 +13,8 @@ import { Button } from '~/components/Button'
 
 export default function Home() {
   return (
-    <section id="home" className="flex justify-between">
-      <Blur className="left-0" />
+    <section id="home" className="flex flex-col justify-between md:flex-row">
+      <Blur className="left-0 !w-56 md:!w-[22rem]" />
 
       {/* Left */}
       <div
@@ -26,9 +26,11 @@ export default function Home() {
           <Navbar />
         </header>
 
+        {/* Ad */}
         <div
-          className="relative mt-16 flex w-fit items-center justify-start
-          rounded-[4rem] bg-[#393d42] px-[13px] py-5 text-white"
+          className="relative mt-0 flex w-fit scale-[0.8] items-center
+          justify-start self-center rounded-[4rem] bg-[#393d42] px-[13px] py-5
+          text-xs text-white md:mt-16 md:scale-100 md:self-start md:text-base"
         >
           <div
             className="absolute left-2 z-[1] h-4/5 w-[5.4rem] rounded-[3rem]
@@ -39,8 +41,9 @@ export default function Home() {
 
         {/* Hero Text */}
         <div
-          className="flex flex-col gap-6 text-7xl font-bold uppercase
-          text-white"
+          className="flex flex-col items-center justify-center gap-6 text-4xl
+          font-bold uppercase text-white md:items-start md:justify-start
+          md:text-7xl"
         >
           <div>
             <span className="stroke-text">Shape</span> <span>Your</span>
@@ -51,8 +54,8 @@ export default function Home() {
           </div>
 
           <div
-            className="w-4/5 text-base font-extralight normal-case
-            tracking-[1px]"
+            className="w-4/5 text-center text-sm font-light normal-case
+            tracking-[1px] md:text-left md:text-base"
           >
             <span>
               In here we will help you to shape and build your ideal body and
@@ -64,14 +67,12 @@ export default function Home() {
         {/* Figures */}
         <div className="flex gap-8">
           <Statistics label="expert coaches" value={140} />
-
           <Statistics label="Members joined" value={978} />
-
           <Statistics label="fitness programs" value={50} />
         </div>
 
         {/* Hero Buttons */}
-        <div className="flex gap-4 !font-normal">
+        <div className="flex justify-center gap-4 !font-normal md:justify-start">
           <Button>Get Started</Button>
           <Button className="!border-2 !border-orange bg-transparent">
             Learn More
@@ -80,15 +81,18 @@ export default function Home() {
       </div>
 
       {/* Right */}
-      <div className="relative bg-[#f48916]" style={{ flex: '1 1' }}>
-        <Button className="absolute right-12 top-8 bg-white !text-black">
+      <div className="relative flex-1 bg-none md:bg-[#f48916]">
+        <Button
+          className="absolute right-12 top-8 !w-fit !bg-white
+          !text-black"
+        >
           <a href="/">Join Now</a>
         </Button>
 
         {/* Heart Rate */}
         <div
-          className="absolute right-16 top-28 flex w-fit flex-col items-start
-          gap-4 rounded-[5px] bg-darkGrey p-4"
+          className="absolute left-4 top-8 flex w-fit flex-col items-start gap-4
+          rounded-[5px] bg-darkGrey p-4 md:left-auto md:right-16 md:top-28"
         >
           <Image
             alt=""
@@ -105,19 +109,22 @@ export default function Home() {
         <Image
           alt=""
           src={heroImg}
-          className="absolute right-32 top-40 w-[23rem]"
+          className="relative left-28 right-32 top-16 w-60 md:absolute
+          md:left-auto md:right-32 md:top-40 md:w-[23rem]"
         />
 
         <Image
           alt=""
           src={heroBgImg}
-          className="absolute right-80 top-16 -z-[1] w-60"
+          className="absolute left-8 right-80 top-0 -z-[1] w-60 md:left-auto
+          md:top-16"
         />
 
         {/* Calories */}
         <div
-          className="absolute right-[28rem] top-[32rem] flex w-max gap-8
-          rounded-[5px] bg-caloryCard p-4"
+          className="relative left-8 right-[28rem] top-20 mt-2 flex w-max gap-8
+          rounded-[5px] bg-caloryCard p-4 md:absolute md:left-auto
+          md:top-[32rem] md:mt-0"
         >
           <Image
             alt=""

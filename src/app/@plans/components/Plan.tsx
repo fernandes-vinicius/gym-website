@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import clsx from 'clsx'
 
 import { Button } from '~/components/Button'
@@ -18,11 +19,12 @@ export function Plan(props: PlanProps) {
     <div
       className={clsx(
         'flex min-w-[15rem] flex-col gap-8 bg-caloryCard p-6 text-white',
-        [isFeatured && 'scale-110 bg-plan-card'],
+        [isFeatured && 'bg-plan-card md:scale-110'],
         className,
       )}
     >
-      <span>hearth icon</span>
+      {/* <span>hearth icon</span> */}
+
       <span className="text-base font-bold">{title}</span>
       <span className="text-5xl font-bold">$ {price}</span>
 

@@ -2,7 +2,7 @@ import { Button } from '~/components/Button'
 
 export default function Form() {
   return (
-    <form className="flex gap-12 bg-[gray] px-8 py-4">
+    <form className="flex w-full flex-col gap-12 bg-[gray] px-8 py-4 md:flex-row">
       <input
         type="email"
         name="user_email"

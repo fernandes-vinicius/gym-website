@@ -3,16 +3,16 @@ import Image from 'next/image'
 interface CategoryProps {
   name: string
   description: string
-  icon: string
+  icon?: string
 }
 
 export function Category({ icon, name, description }: CategoryProps) {
   return (
     <div
-      className="bg-[none 0% 0% / auto repeat scroll padding-box border-box
-      rgb(128, 128, 128)] flex flex-1 cursor-auto flex-col justify-between
-      gap-4 bg-[gray] p-8 text-white hover:cursor-pointer hover:bg-plan-card"
+      className="flex flex-1 cursor-auto flex-col justify-between gap-4
+      bg-[gray] p-8 text-white hover:cursor-pointer hover:bg-plan-card"
     >
+      {/* TODO usar lib de icon */}
       <span>{icon}</span>
       <span className="text-base font-bold">{name}</span>
       <span className="text-[0.9rem] leading-[25px]">{description}</span>

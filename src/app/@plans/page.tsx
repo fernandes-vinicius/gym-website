@@ -9,8 +9,9 @@ export default function Plans() {
       <Blur className="right-0 top-40 !h-[23rem] !w-[32rem] " />
 
       <header
-        className="flex justify-center gap-8 text-5xl font-bold uppercase
-        italic text-white"
+        className="mt-8 flex flex-col items-center justify-center gap-8 text-2xl
+        font-bold uppercase italic text-white md:mt-0 md:flex-row
+        md:items-start md:justify-start md:text-5xl"
       >
         <span className="stroke-text">Ready to Start</span>
         <span>Your Journey</span>
@@ -18,7 +19,10 @@ export default function Plans() {
       </header>
 
       {/* Plans */}
-      <div className="flex items-center justify-center gap-12">
+      <div
+        className="flex flex-col items-center justify-center gap-12
+        md:flex-row"
+      >
         <Plan
           title="Basic Plan"
           price={25}

@@ -18,7 +18,6 @@ module.exports = {
 
       blur: {
         full: '150px',
-        'full-2': '200px',
       },
 
       backgroundImage: {
