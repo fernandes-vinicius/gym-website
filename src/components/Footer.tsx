@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Logo } from './Logo'
 import { Blur } from './Blur'
@@ -38,9 +39,9 @@ export function Footer() {
         </div>
 
         {/* Logo */}
-        <div>
+        <Link href="/">
           <Logo className="w-40" />
-        </div>
+        </Link>
       </div>
 
       <Blur

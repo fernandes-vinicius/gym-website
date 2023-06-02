@@ -30,7 +30,10 @@ export default function RootLayout(props: RootLayoutProps) {
 
   return (
     <html lang="en" className={inter.className}>
-      <body className="overflow-x-hidden bg-appColor bg-main-deep">
+      <body
+        className="overflow-x-hidden scroll-smooth bg-appColor
+        bg-main-deep"
+      >
         <main className="flex flex-col gap-24">
           {children}
           {programs}

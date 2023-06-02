@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import heroImg from '~/assets/images/hero.png'
 import heroBgImg from '~/assets/images/hero-bg.png'
@@ -86,7 +87,7 @@ export default function Home() {
           className="absolute right-12 top-8 !w-fit !bg-white
           !text-black"
         >
-          <a href="/">Join Now</a>
+          <Link href="/">Join Now</Link>
         </Button>
 
         {/* Heart Rate */}
@@ -111,6 +112,7 @@ export default function Home() {
           src={heroImg}
           className="relative left-28 right-32 top-16 w-60 md:absolute
           md:left-auto md:right-32 md:top-40 md:w-[23rem]"
+          priority
         />
 
         <Image
