@@ -1,9 +1,10 @@
+'use client'
+
 import Image from 'next/image'
-import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 import heroImg from '~/assets/images/hero.png'
 import heroBgImg from '~/assets/images/hero-bg.png'
-import hearthRateIcon from '~/assets/icons/hearth-rate.png'
 import caloriesBarsIcon from '~/assets/icons/calories-bars.png'
 
 import { Blur } from '~/components/Blur'
@@ -11,6 +12,10 @@ import { Logo } from '~/components/Logo'
 import { Navbar } from '~/components/Navbar'
 import { Statistics } from '~/components/Statistics'
 import { Button } from '~/components/Button'
+import { NavLink } from '~/components/NavLink'
+import { HeartRate } from '~/components/HeartRate'
+
+const MotionImage = motion(Image)
 
 export default function Home() {
   return (
@@ -33,7 +38,10 @@ export default function Home() {
           justify-start self-center rounded-[4rem] bg-[#393d42] px-[13px] py-5
           text-xs text-white md:mt-16 md:scale-100 md:self-start md:text-base"
         >
-          <div
+          <motion.div
+            initial={{ right: 8, left: 'auto' }}
+            whileInView={{ right: 'initial', left: 'initial' }}
+            transition={{ duration: 3 }}
             className="absolute left-2 z-[1] h-4/5 w-[5.4rem] rounded-[3rem]
             bg-[#f48916]"
           />
@@ -87,25 +95,13 @@ export default function Home() {
           className="absolute right-12 top-8 !w-fit !bg-white
           !text-black"
         >
-          <Link href="/">Join Now</Link>
+          <NavLink to="join-us" className="hover:!text-black">
+            Join Now
+          </NavLink>
         </Button>
 
         {/* Heart Rate */}
-        <div
-          className="absolute left-4 top-8 flex w-fit flex-col items-start gap-4
-          rounded-[5px] bg-darkGrey p-4 md:left-auto md:right-16 md:top-28"
-        >
-          <Image
-            alt=""
-            src={hearthRateIcon}
-            width={32}
-            height={32}
-            className="w-8"
-            priority
-          />
-          <span className="text-gray">Heart Rate</span>
-          <span className="text-2xl text-white">116 bpm</span>
-        </div>
+        <HeartRate />
 
         <Image
           alt=""
@@ -115,7 +111,10 @@ export default function Home() {
           priority
         />
 
-        <Image
+        <MotionImage
+          initial={{ x: '100%', opacity: 0 }}
+          whileInView={{ x: '0%', opacity: 1 }}
+          transition={{ duration: 1 }}
           alt=""
           src={heroBgImg}
           className="absolute left-8 right-80 top-0 -z-[1] w-60 md:left-auto
@@ -123,7 +122,10 @@ export default function Home() {
         />
 
         {/* Calories */}
-        <div
+        <motion.div
+          initial={{ x: '-50%' }}
+          whileInView={{ x: '0%' }}
+          transition={{ duration: 1 }}
           className="relative left-8 right-[28rem] top-20 mt-2 flex w-max gap-8
           rounded-[5px] bg-caloryCard p-4 md:absolute md:left-auto
           md:top-[32rem] md:mt-0"
@@ -139,7 +141,7 @@ export default function Home() {
             <span className="text-gray">Calories burned</span>
             <span className="text-2xl text-white">220 kcal</span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

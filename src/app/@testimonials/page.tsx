@@ -1,7 +1,10 @@
+'use client'
+
 import Image from 'next/image'
 import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react'
 
 import tImage3 from '~/assets/images/t-image3.jpg'
+import { motion } from 'framer-motion'
 
 export default function Testimonials() {
   return (
@@ -34,12 +37,24 @@ export default function Testimonials() {
         className="relative flex flex-1 flex-col items-center justify-center
         gap-8 md:flex-row md:items-start md:justify-start md:gap-0"
       >
-        <div
+        <motion.div
+          initial={{ x: '-100%', opacity: 0 }}
+          whileInView={{
+            x: '0%',
+            opacity: 2,
+            transition: { duration: 1.5 },
+          }}
           className="absolute right-36 top-[0.9rem] h-80 w-[17rem] border-2
           border-solid border-orange"
         />
 
-        <div
+        <motion.div
+          initial={{ x: '100%', opacity: 0 }}
+          whileInView={{
+            x: '0%',
+            opacity: 1,
+            transition: { duration: 1.5 },
+          }}
           className="absolute right-28 top-16 h-[19rem] w-[17rem]
           bg-plan-card"
         />

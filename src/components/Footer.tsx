@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 import githubIcon from '~/assets/icons/github.png'
 import instagramIcon from '~/assets/icons/instagram.png'
@@ -7,6 +6,7 @@ import linkedinIcon from '~/assets/icons/linkedin.png'
 
 import { Logo } from './Logo'
 import { Blur } from './Blur'
+import { NavLink } from './NavLink'
 
 export function Footer() {
   return (
@@ -37,9 +37,9 @@ export function Footer() {
         </div>
 
         {/* Logo */}
-        <Link href="/">
+        <NavLink to="home">
           <Logo className="w-40" />
-        </Link>
+        </NavLink>
       </div>
 
       <Blur
